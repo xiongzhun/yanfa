@@ -352,9 +352,9 @@ class YOUQU:
     group_id = "77526748692482"
     user_id = "10148"
 
-    sign_interval = 120
+    sign_interval = 30
     chat_interval = 20
-    comment_interval = 60
+    comment_interval = 10
 
     def __init__(self):
         self.c = set_up()
