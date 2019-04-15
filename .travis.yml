@@ -1,0 +1,37 @@
+language: python  #设置语言
+
+python: 2.7 #设置相应的版本
+
+
+before_install:
+    - export TZ='Asia/Shanghai' # 更改时区
+
+install:
+  - git clone -b yanfa https://github.com/xiongzhun/new_youqu.git
+  - cd new_youqu
+  - pip install -r requirements.txt
+
+script:
+  - python new.py sign_all
+#  - python new.py chat_all
+  - python new.py comment_all
+
+after_script:
+
+
+branches:
+#    - gh-pages
+#    - ci
+env:
+# global:
+#   - GH_REF: github.com/xiongzhun/xiongzhun.github.io.git  #设置GH_REF
+#   - CODING_ADD: git.coding.net/xz2048aliyuncom/xz2048aliyuncom.git
+
+# configure notifications (email, IRC, campfire etc)
+# please update this section to your needs!
+# https://docs.travis-ci.com/user/notifications/
+#notifications:
+#  email:
+#    - xz2048@aliyun.com
+#  on_success: change
+#  on_failure: always
