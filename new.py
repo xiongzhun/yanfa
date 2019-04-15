@@ -268,7 +268,7 @@ def sign_all_user_in_group(c, userlist, group_id, interval):
         userlist = random.sample(userlist, len(userlist))
         for user in userlist:
 
-            time.sleep(random.randint(10, interval))
+            time.sleep(random.randint(2, interval))
 
             username = user["userName"].encode('utf-8')
             userid = user["userId"].encode('utf-8')
@@ -308,7 +308,7 @@ def chat_all_user_in_group(c, userlist, group_id, interval):
             LOG.info("User %(userName)s :chat in youqu, resp: %(resp)s, "
                      "body: %(body)s", {'userName': username,'resp': chat_resp,'body': chat_body})
 
-            time.sleep(random.randint(10, interval))
+            time.sleep(random.randint(2, interval))
 
             LAST_CHAT_CONTENT = chat_tuling(c, LAST_CHAT_CONTENT)
 
@@ -401,7 +401,7 @@ class YOUQU:
                     resp, body = view_activities(self.c, userid, activity['id'])
                     LOG.info("resp: %(resp)s, body: %(body)s", {'resp': resp,
                                                                 'body': body})
-                    time.sleep(random.randint(15, self.comment_interval))
+                    time.sleep(random.randint(3, self.comment_interval))
                     resp, body = comment_activities(self.c, userid, activity['id'])
                     LOG.info("resp: %(resp)s, body: %(body)s", {'resp': resp,
                                                                 'body': body})
